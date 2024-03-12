@@ -21,7 +21,7 @@ class UserUpdateAPIView(generics.UpdateAPIView):
     queryset = User.objects.all()
     permission_classes = [IsOwner]
 
-    def perform_create(self, serializer):
+    def perform_update(self, serializer):
         user = serializer.save(is_active=True)
         user.set_password(user.password)
         user.save()

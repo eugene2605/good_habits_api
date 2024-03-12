@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Habit(models.Model):
-    user = models.ForeignKey('users.User', on_delete=models.CASCADE, null=True, blank=True,
+    user = models.ForeignKey('users.User', on_delete=models.CASCADE, blank=True,
                              verbose_name='создатель привычки')
     place = models.CharField(max_length=150, verbose_name='место')
     time = models.TimeField(verbose_name='время')
